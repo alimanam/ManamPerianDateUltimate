@@ -1,21 +1,3 @@
-```#Region  Project Attributes 
-	#ApplicationLabel: Sample_001
-	#VersionCode: 1
-	#VersionName: 
-	'SupportedOrientations possible values: unspecified, landscape or portrait.
-	#SupportedOrientations: unspecified
-	#CanInstallToExternalStorage: False
-#End Region
-
-#Region  Activity Attributes 
-	#FullScreen: False
-	#IncludeTitle: True
-#End Region
-
-Sub Process_Globals
-	
-End Sub
-
 Sub Globals
 	Private pd As ManamPerianDateUltimate
 	Private sp As Spinner
@@ -88,6 +70,4 @@ Sub Button1_Click
 		Case "Jome"
 			Msgbox("جمعه" & longDate, "")
 	End Select
-
-
-End Sub```
+End Sub
