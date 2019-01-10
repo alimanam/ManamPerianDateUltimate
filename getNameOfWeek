@@ -1,0 +1,93 @@
+#Region  Project Attributes 
+	#ApplicationLabel: Sample_001
+	#VersionCode: 1
+	#VersionName: 
+	'SupportedOrientations possible values: unspecified, landscape or portrait.
+	#SupportedOrientations: unspecified
+	#CanInstallToExternalStorage: False
+#End Region
+
+#Region  Activity Attributes 
+	#FullScreen: False
+	#IncludeTitle: True
+#End Region
+
+Sub Process_Globals
+	
+End Sub
+
+Sub Globals
+	Private pd As ManamPerianDateUltimate
+	Private sp As Spinner
+End Sub
+
+Sub Activity_Create(FirstTime As Boolean)
+	Activity.LoadLayout("1")
+	For i = 1 To 365
+		sp.Add(i)
+	Next
+	sp.SelectedIndex = 0
+End Sub
+
+Sub Button1_Click
+	
+	Dim gre As String = pd.PersianToGregorian(pd.AddDaysToPersianDate("1397/10/20", sp.SelectedItem))
+	Log(gre)
+	Dim per As String = pd.GregorianToPersian(gre)
+	Log(per)
+	Dim year As Int = per.SubString2(0,4)
+	Log(year)
+	Dim month As Int = per.SubString2(5,7)
+	Log(month)
+	Dim day As Int = per.SubString2(8,10)
+	Log(day)
+	Log("-------------------------------------------")
+	Dim monthName As String 
+	Select Case month
+		Case 1
+			monthName = "فروردین"
+		Case 2
+			monthName = "اردیبهشت"
+		Case 3 
+			monthName = "خرداد"
+		Case 4
+			monthName = "تیر"
+		Case 5
+			monthName = "مرداد"
+		Case 6
+			monthName = "شهریور"
+		Case 7
+			monthName = "مهر"
+		Case 8
+			monthName = "آبان"
+		Case 9
+			monthName = "آذر"
+		Case 10
+			monthName = "دی"
+		Case 11
+			monthName = "بهمن"
+		Case 12
+			monthName = "اسفند"
+	End Select
+	
+	Dim longDate As String = " " &  day &  " " & monthName & " " & year
+	
+	Select Case pd.getDayOfWeekByPerianDate(per)
+		Case "Shanbe"
+			Msgbox(" شنبه " & longDate , "")
+		Case "Yekshanbe"
+			Msgbox("یکشنبه" & longDate, "")
+		Case "Doshanbe"
+			Msgbox("دوشنبه" & longDate, "")
+		Case "Seshanbe"
+			Msgbox("سه شنبه" & longDate, "")
+		Case "Charshanbe"
+			Msgbox("چهارشنبه" & longDate, "")
+		Case "Panjshanbe"
+			Msgbox("پنح شنبه" & longDate, "")
+		Case "Jome"
+			Msgbox("جمعه" & longDate, "")
+	End Select
+
+
+End Sub
