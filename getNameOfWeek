@@ -23,7 +23,7 @@ Sub Button1_Click
 	Log(month)
 	Dim day As Int = per.SubString2(8,10)
 	Log(day)
-	Log("-------------------------------------------")
+	Log("--------------------------------------------")
 	Dim monthName As String 
 	Select Case month
 		Case 1
