@@ -4,7 +4,7 @@ Sub Globals
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
-	Activity.LoadLayout("1")
+	Activity.LoadLayout("31")
 	For i = 1 To 365
 		sp.Add(i2)
 	Next
