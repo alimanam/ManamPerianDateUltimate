@@ -25,6 +25,7 @@ Sub Button1_Click
 	Log(day)
 	Log("--------------------------------------------")
 	Dim monthName As String 
+	Log("++++++++++++++++++++++++++")
 	Select Case month
 		Case 1
 			monthName = "فروردین"
@@ -69,5 +70,7 @@ Sub Button1_Click
 			Msgbox("پنح شنبه" & longDate, "")
 		Case "Jome"
 			Msgbox("جمعه" & longDate, "")
+		Case Else
+			Msgbox("Nothing to show!", "")
 	End Select
 End Sub
