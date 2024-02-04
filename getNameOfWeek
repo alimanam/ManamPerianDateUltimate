@@ -74,3 +74,7 @@ Sub Button1_Click
 			Msgbox("Nothing to show!", "")
 	End Select
 End Sub
+
+Private Sub GetDay(dt as DateTime) as int
+	Return pd.GetDay(dt)
+End Sub
